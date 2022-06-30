@@ -1,0 +1,27 @@
+td, th {
+    border: 1px solid rgb(35, 35, 35);
+    padding: 20px;
+  }
+  td{
+    background: gray;
+    color: white;
+  }
+  .primary{
+    background-color: brown;
+    position: sticky;
+  }
+   th {
+    background: #ffc107;
+    color: white;
+    border-radius: 0;
+    top: 0;
+    padding: 10px;
+  }
+  tbody > tr:hover {
+    background-color: #ffc107;
+  }
+  table{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  

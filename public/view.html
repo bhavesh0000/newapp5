@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="view.css">
+    <title>Document</title>
+</head>
+<body id="data">
+
+<div>
+   
+        <table>
+            <thead>
+                <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Mobile No.</th>
+                <th>Email</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Login Id</th>
+                <th>Password</th>          
+                </tr>
+    </thead>
+        <tbody id="dataList">
+
+        </tbody>
+</div>
+    <script>
+      axios.get("http://localhost:4444/api/v1/task").then((res)=>{
+        console.log(res.data.data.doc)
+        let tab=``
+        for (let r of res.data.data.doc) {
+        tab += `
+            <tr>
+                <td>${r.firstname}</td>
+                <td>${r.lastname}</td>
+                <td>${r.phone}</td>
+                <td>${r.email}</td>
+                <td>${r.street}</td>
+                <td>${r.city}</td>
+                <td>${r.state}</td>
+                <td>${r.country}</td>
+                <td>${r.loginId}</td>
+                <td>${r.password}</td>          
+            </tr>`
+        }
+        document.getElementById("dataList").innerHTML = tab;
+      })
+    </script>
+</body>
+</html>
