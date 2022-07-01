@@ -5,13 +5,18 @@ dotenv.config();
 dotenv.config({ path: './.env' });
 const app = require('./app');
 
-const URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DATABASE_PASSWORD}@cluster0.fknkk.mongodb.net/?retryWrites=true&w=majority` ||'mongodb://mongo:27017' 
+const DB = `mongodb+srv://bhavesh3000:bhavesh3000@cluster0.4iihk.mongodb.net/bhaveshapp?retryWrites=true&w=majority` ||'mongodb://mongo:27017' 
 // @cluster0.fknkk.mongodb.net/?retryWrites=true&w=majority
-mongoose.connect(URI, {
+mongoose.connect(DB,{
   useNewUrlParser: true,
+  useCreateIndex: true,
   useUnifiedTopology: true,
-  })
-  .then(() => console.log('DB connection successful!'));
+  useFindAndModify: false,
+}).then(() =>{
+console.log(`connection successful`);
+
+}).catch((err) => console.log(`no connection`)); 
+  
 
 const port = process.env.PORT || 4444 ;
 app.listen(port, () => {
