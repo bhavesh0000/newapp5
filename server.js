@@ -1,13 +1,12 @@
 
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-dotenv.config();
 dotenv.config({ path: './.env' });
 const app = require('./app');
 
-const DB = `mongodb+srv://bhavesh3000:bhavesh3000@cluster0.4iihk.mongodb.net/bhaveshapp?retryWrites=true&w=majority` ||'mongodb://mongo:27017' 
+const URI = `mongodb+srv://bhavesh3000:bhavesh3000@cluster0.4iihk.mongodb.net/?retryWrites=true&w=majority` 
 // @cluster0.fknkk.mongodb.net/?retryWrites=true&w=majority
-mongoose.connect(DB,{
+mongoose.connect(URI,{
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
