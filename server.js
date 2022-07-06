@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 dotenv.config({ path: './.env' });
 const app = require('./app');
 
-const URI = `mongodb+srv://<bhavesh1234>:<feelgood123>@cluster0.4iihk.mongodb.net/?retryWrites=true&w=majority` 
+const URI = `mongodb+srv://bhavesh1234:feelgood123@cluster0.4iihk.mongodb.net/?retryWrites=true&w=majority` 
 // @cluster0.fknkk.mongodb.net/?retryWrites=true&w=majority
 mongoose.connect(URI,{
   useNewUrlParser: true,
